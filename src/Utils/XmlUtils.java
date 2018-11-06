@@ -35,6 +35,7 @@ public class XmlUtils {
             testfilepath = "D:\\upfiles\\test.xml";
 		}
 
+
 		try {
 			usersfilepath = URLDecoder.decode(usersfilepath, "UTF-8");	//解决文件夹命名中有空格的问题！！！
 		} catch (UnsupportedEncodingException e) {
