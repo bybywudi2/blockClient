@@ -13,7 +13,9 @@ import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
-
+/*
+Servlet收到qid,index,mid,host之后，调用doCalculate方法计算出结果，回传给分发者的BServer
+ */
 @WebServlet("/CalculateServlet")
 public class CalculateServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {

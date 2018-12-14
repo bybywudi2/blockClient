@@ -6,6 +6,8 @@ public class User {
 	private String id;
 	private String username;
 	private String password;
+	private String ip;
+	private Integer type;
 	private String email;
 	private Date birthday;
 	private String nikename;
@@ -45,5 +47,21 @@ public class User {
 	}
 	public void setNikename(String nikename) {
 		this.nikename = nikename;
+	}
+
+	public String getIp() {
+		return ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+
+	public Integer getType() {
+		return type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
 	}
 }

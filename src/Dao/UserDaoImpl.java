@@ -267,4 +267,30 @@ public class UserDaoImpl{
 
 		node.addAttribute("add","增加");//添加的属性
 	}*/
+
+	public void addNewUser(User u){
+		try {
+			Document document = XmlUtils.getBlocksDocument();
+			Element root = document.getRootElement();
+			Element e = (Element) root.selectSingleNode("nowid");
+			Attribute attr = e.attribute("id");
+			int nowId = Integer.parseInt(attr.getValue()) + 1;
+
+			Element user_tag = root.addElement("user");
+
+			user_tag.setAttributeValue("id",Integer.toString(nowId));
+			user_tag.setAttributeValue("preId",Integer.toString(nowId - 1));
+			user_tag.setAttributeValue("ip",u.getIp());
+			user_tag.setAttributeValue("username",u.getUsername());
+			user_tag.setAttributeValue("password",u.getPassword());
+			user_tag.setAttributeValue("type",Integer.toString(u.getType()));
+			user_tag.setAttributeValue("coin","500");
+			user_tag.setAttributeValue("status","1");
+			attr.setValue(Integer.toString(nowId));
+			XmlUtils.write2BlocksXml(document);
+
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
 }

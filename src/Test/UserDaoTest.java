@@ -7,7 +7,18 @@ import org.junit.Test;
 import java.util.Date;
 
 public class UserDaoTest {
-	
+	@Test
+	public void tesAddNewUser() {
+		User user = new User();
+		user.setPassword("123");
+		user.setUsername("aaa");
+		user.setIp("123.125.123.123");
+		user.setType(1);
+		UserDaoImpl dao = new UserDaoImpl();
+		dao.addNewUser(user);
+	}
+
+
 	@Test
 	public void tesAdd() {
 		User user = new User();
